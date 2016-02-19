@@ -7,59 +7,16 @@ import React, {
     AppRegistry,
     Component,
     StyleSheet,
-    Text,
-    View,
     Navigator
 } from 'react-native';
 
-var Button = require('react-native-button');
-
-class FeedView extends React.Component {
-    render() {
-        return (
-            <View style={styles.container}>
-                <Text>
-                    Feed View!
-                </Text>
-            </View>
-        );
-    }
-}
-
-var MyComponent = React.createClass({
-    _handlePress(event) {
-        this.props.navigator.push({component: FeedView})
-    },
-
-    render() {
-        return (
-            <Button
-                onPress={this._handlePress}
-                style={{borderWidth: 1, borderColor: 'blue'}}>
-                Feed View
-            </Button>
-        );
-    }
-});
-
-class WelcomeView extends React.Component {
-    render() {
-        return (
-            <View style={styles.container}>
-                <Text>
-                    Welcome View!
-                </Text>
-                <MyComponent navigator={this.props.navigator}/>
-            </View>
-        );
-    }
-}
+import LoginView from './screens/auth/login';
 
 class app extends Component {
     render() {
         return (
             <Navigator
-                initialRoute={{component: WelcomeView}}
+                initialRoute={{component: LoginView}}
                 configureScene={() => {
                     return Navigator.SceneConfigs.FloatFromRight;
                 }}
