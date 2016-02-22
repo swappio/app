@@ -2,7 +2,8 @@ import React , {
     View,
     Text,
     TextInput,
-    StyleSheet
+    StyleSheet,
+    AsyncStorage
 } from 'react-native';
 
 import Spinner from 'react-native-spinkit';
@@ -36,7 +37,8 @@ var LoginForm = React.createClass({
         })
             .then((response) => {
                 if (response.status === 200) {
-                    this.props.navigator.push({component: WelcomeView})
+                    this.props.navigator.push({component: WelcomeView});
+                    AsyncStorage.setItem('access_token', response.data.token);
                 } else {
                     this.state.message = "Please check your credentials";
                 }

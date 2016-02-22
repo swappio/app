@@ -7,16 +7,18 @@ import React, {
     AppRegistry,
     Component,
     StyleSheet,
-    Navigator
+    Navigator,
+    View
 } from 'react-native';
 
 import LoginView from './screens/auth/login';
+import SwapsView from './screens/swaps';
 
 class app extends Component {
     render() {
         return (
             <Navigator
-                initialRoute={{component: LoginView}}
+                initialRoute={{component: SwapsView}}
                 configureScene={() => {
                     return Navigator.SceneConfigs.FloatFromRight;
                 }}
@@ -29,14 +31,5 @@ class app extends Component {
         );
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#fcfcfc'
-    }
-});
 
 AppRegistry.registerComponent('app', () => app);
