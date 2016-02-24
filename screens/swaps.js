@@ -13,8 +13,10 @@ import React , {
 
 import ScrollableTabsView from 'react-native-scrollable-tab-view';
 import CustomTabBar from '../components/tabs/bar';
+import RecommendationsView from './recommendations';
 
 class TabView  extends React.Component {
+
     render() {
         return (
             <ScrollableTabsView renderTabBar={() => <CustomTabBar/>}
@@ -22,7 +24,7 @@ class TabView  extends React.Component {
                       tabBarUnderlineColor="#ffffff"
                       tabBarActiveTextColor="#ffffff"
                       tabBarInactiveTextColor="#999999">
-                <Text tabLabel="Recommended"></Text>
+                <RecommendationsView tabLabel="Recommended"></RecommendationsView>
                 <Text tabLabel="Popular"></Text>
                 <Text tabLabel="Newest"></Text>
             </ScrollableTabsView>

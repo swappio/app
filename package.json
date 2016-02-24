@@ -6,7 +6,8 @@
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
-    "flux": "^2.1.1",
+    "events": "^1.1.0",
+    "keymirror": "^0.1.1",
     "react-native": "^0.20.0",
     "react-native-button": "^1.4.2",
     "react-native-carousel": "^0.4.5",
